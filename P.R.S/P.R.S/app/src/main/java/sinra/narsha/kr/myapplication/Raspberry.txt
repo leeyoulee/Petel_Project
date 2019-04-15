@@ -1,0 +1,19 @@
+
+42~46번줄
+mysqlID.server = "211.115.127.8";
+mysqlID.user = "PRS";
+mysqlID.password = "PRS!23$%";
+mysqlID.database = "PRS";
+
+53번줄
+sprintf(str3, "INSERT INTO REV_TEMP(RAS_IP, TEMP) VALUES(\"%s\", \"%f\")", dhtval[0], dhtval[2]);	//온도
+sprintf(str3, "INSERT INTO REV_HUMID(RAS_IP, HUMID) VALUES(\"%s\", \"%f\")", dhtval[0], dhtval[2]);	//습도
+sprintf(str3, "INSERT INTO REV_WATER(RAS_IP, WATER) VALUES(\"%s\", \"%f\")", dhtval[0], dhtval[2]);	//물
+
+
+58번줄
+res=mysql_perform_query(conn, "SELECT RAS_IP, TEMP FROM REV_TEMP");		//온도
+res=mysql_perform_query(conn, "SELECT RAS_IP, HUMID FROM REV_HUMID");	//습도
+res=mysql_perform_query(conn, "SELECT RAS_IP, WATER FROM REV_WATER");	//물
+
+
